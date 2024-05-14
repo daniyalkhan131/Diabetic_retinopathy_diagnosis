@@ -7,7 +7,7 @@ from service.core.logic.onnx_inference import emotions_detector
 emo_router = APIRouter() #for routing info. from here to main.py
 
 @emo_router.post("/detect")
-def detect (im: UploadFile): #it is for uploading file
+async def detect (im: UploadFile): #it is for uploading file
 
     if im.filename.split(".")[-1] in ("jpg", "jpeg", "png"):
         pass 
